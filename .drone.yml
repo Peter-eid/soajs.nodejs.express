@@ -1,0 +1,12 @@
+pipeline:
+  build:
+    image: node:boron
+    commands:
+      - npm install
+      - grunt coverage
+    when:
+      branch: [master]
+
+  cache:
+    rebuild: true
+    mount: [ node_modules, .git ]
