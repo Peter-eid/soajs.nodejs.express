@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: soajsorg/soajs
+    image: node:latest
     commands:
       - npm install
       - grunt coverage
