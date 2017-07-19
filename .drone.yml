@@ -1,6 +1,6 @@
 pipeline:
   build:
-    image: node:boron
+    image: node:5-wheezy
     commands:
       - npm install
       - grunt coverage
