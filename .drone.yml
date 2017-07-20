@@ -6,7 +6,7 @@ pipeline:
       - grunt coverage
     when:
       branch: [master]
-
-  cache:
-    rebuild: true
-    mount: [ node_modules, .git ]
+      
+services:
+  database:
+    image: mongodb
