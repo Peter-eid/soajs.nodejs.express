@@ -7,6 +7,10 @@ pipeline:
       - grunt coverage
     when:
       branch: [master]
+  cache:
+    mount:
+      - .git
+      - node_modules 
       
 compose:
   mongodb:
