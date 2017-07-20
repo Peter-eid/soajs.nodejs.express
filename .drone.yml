@@ -7,6 +7,6 @@ pipeline:
     when:
       branch: [master]
       
-services:
-  database:
-    image: mongodb
+compose:
+  mongodb:
+    image: mongo:3.2
