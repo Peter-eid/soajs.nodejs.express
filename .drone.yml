@@ -5,7 +5,7 @@ pipeline:
       - npm install
       - grunt coverage
     when:
-      branch: [master]
+      branch: [master,develop]
 
   cache:
     rebuild: true
