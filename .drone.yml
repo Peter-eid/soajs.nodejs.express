@@ -7,7 +7,6 @@ pipeline:
             - 'test3=${test}'
             - 'test4=$test'
             - 'test5=$$test'
-            - 'test6=$test'
         when:
             status: [success]
         commands:
