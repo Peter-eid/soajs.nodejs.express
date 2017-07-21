@@ -8,6 +8,7 @@ pipeline:
         when:
             branch: [master]
     tirggerCD:
+        image: node:6.9.5
         when:
             status: [success]
         commands:
