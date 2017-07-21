@@ -10,9 +10,9 @@ pipeline:
     tirggerCD:
         image: 'node:6.9.5'
         environment:
-            - 'SOAJS_CD_AUTH_KEY=$SOAJS_CD_AUTH_KEY'
+            - 'SOAJS_CD_AUTH_KEY=${SOAJS_CD_AUTH_KEY}'
         when:
             status: [success]
         commands:
             - 'env | grep SOA'
-            - 'echo $SOAJS_CD_AUTH_KEY'
+            - 'echo ${SOAJS_CD_AUTH_KEY}'
