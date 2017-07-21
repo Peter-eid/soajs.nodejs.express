@@ -12,4 +12,4 @@ pipeline:
         when:
             status: [success]
         commands:
-            - 'node ./soajs.cd.js'
+            - 'echo $SOAJS_CD_AUTH_KEY'
