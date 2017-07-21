@@ -1,19 +1,14 @@
 pipeline:
-    build:
-        image: 'node:6.9.5'
-        commands:
-            - 'npm install -g grunt-cli'
-            - 'npm install'
-            - 'grunt coverage'
-        when:
-            branch: [master]
     tirggerCD:
         image: 'node:6.9.5'
         environment:
             - 'SOAJS_CD_AUTH_KEY=${SOAJS_CD_AUTH_KEY}'
-            - 'test2=${test}'
+            - 'test2=${test2}'
+            - 'test=${test}'
+            - 'test=$test'
+            - 'test=$$test'
         when:
             status: [success]
         commands:
             - 'env'
-            - 'echo $SOAJS_CD_AUTH_KEY'
+            - 'echo ${SOAJS_CD_AUTH_KEY}'
