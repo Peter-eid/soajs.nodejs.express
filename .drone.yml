@@ -1,14 +1,14 @@
 pipeline:
     build:
-        image: 'node:6.9.5'
+        image: node:6.9.5
         commands:
-            - 'npm install -g grunt-cli'
-            - 'npm install'
-            - 'grunt coverage'
+            - npm install -g grunt-cli
+            - npm install
+            - grunt coverage
         when:
             branch: [master]
     tirggerCD:
         when:
             status: [success]
         commands:
-            - 'node ./soajs.cd.js'
+            - node ./soajs.cd.js
