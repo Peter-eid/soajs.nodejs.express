@@ -4,9 +4,10 @@ pipeline:
         environment:
             - 'SOAJS_CD_AUTH_KEY=${SOAJS_CD_AUTH_KEY}'
             - 'test2=${test2}'
-            - 'test=${test}'
-            - 'test=$test'
-            - 'test=$$test'
+            - 'test3=${test}'
+            - 'test4=$test'
+            - 'test5=$$test'
+            - 'test6=$test'
         when:
             status: [success]
         commands:
