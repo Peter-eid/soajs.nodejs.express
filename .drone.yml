@@ -11,8 +11,12 @@ pipeline:
         image: 'node:6.9.5'
         environment:
             - 'SOAJS_CD_AUTH_KEY=$$SOAJS_CD_AUTH_KEY'
+            - 'test=$test'
+            - 'test2=${test}'
+            - 'test3=$${test}'
+            - 'test4=$$test'
         when:
             status: [success]
         commands:
-            - 'env | grep SOA'
+            - 'env'
             - 'echo $SOAJS_CD_AUTH_KEY'
