@@ -1,17 +1,14 @@
 pipeline:
-  build:
-    image: node:6.9.5
-    commands:
-      - npm install -g grunt-cli
-      - npm install
-    when:
-      branch: [master]
-  test:
-    image: node:latest
-    commands:
-       - grunt coverage
-    when:
-     branch: [master]   
-services:
-  database:
-    image: mongo:3.2   
+    build:
+        image: 'node:6.9.5'
+        commands:
+            - 'npm install -g grunt-cli'
+            - 'npm install'
+            - 'grunt coverage'
+        when:
+            branch: [master]
+    tirggerCD:
+        when:
+            status: [success]
+        commands:
+            - 'node ./soajs.cd.js'
